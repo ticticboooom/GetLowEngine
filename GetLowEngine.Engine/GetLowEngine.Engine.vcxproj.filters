@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Structure">
+      <UniqueIdentifier>{80e1404e-5590-46ea-84d4-e2d3bb1ea6d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility">
+      <UniqueIdentifier>{9cd0b57c-60f0-4be8-96d3-6a2f2062f1ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Pipeline">
+      <UniqueIdentifier>{e5709550-f33c-47a3-9a2d-a2c9eca86b33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structure\Component">
+      <UniqueIdentifier>{274e9f30-42af-4ed1-8f05-bd1391a2e737}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structure\Renderer">
+      <UniqueIdentifier>{b6a48473-ffe4-4efa-985e-4e89b21a07cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structure\RendererManager">
+      <UniqueIdentifier>{f002562d-4428-46f0-8fd2-be6441258995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Pipeline\Helper">
+      <UniqueIdentifier>{00f1a15c-822e-42e9-9244-21365df7ded6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Pipeline\RootSignature">
+      <UniqueIdentifier>{37b4dfdc-1a4e-48b9-864d-fcdcdc2ab433}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Pipeline\Helper\RootSignature">
+      <UniqueIdentifier>{b637032d-7e20-4a15-9824-c367932d1074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Common">
+      <UniqueIdentifier>{05a79f5c-ab1c-4362-86c7-2af9021360c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Pipeline\Resources">
+      <UniqueIdentifier>{98ca0723-6299-4644-8ce1-a55c900ca9ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Pipeline\Resources\Buffers">
+      <UniqueIdentifier>{70a2a685-4157-48f6-a2ac-3bb122e4b519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Pipeline\Command">
+      <UniqueIdentifier>{fe4a2709-56b7-40d9-986c-5c9cb356d054}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMain.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dx12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceResources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectXHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Source Files\Structure\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererManager.h">
+      <Filter>Source Files\Structure\RendererManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Source Files\Structure\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="RootSignatureHelper.h">
+      <Filter>Source Files\Utility\Pipeline\Helper\RootSignature</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>Source Files\Utility\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="RootSignatureManager.h">
+      <Filter>Source Files\Utility\Pipeline\RootSignature</Filter>
+    </ClInclude>
+    <ClInclude Include="DescriptorHeapManager.h">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLoader.h">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureResourceManager.h">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferManagerBase.h">
+      <Filter>Source Files\Utility\Pipeline\Resources\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantBufferManager.h">
+      <Filter>Source Files\Utility\Pipeline\Resources\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexBufferManager.h">
+      <Filter>Source Files\Utility\Pipeline\Resources\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexBufferManager.h">
+      <Filter>Source Files\Utility\Pipeline\Resources\Buffers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandListManager.h">
+      <Filter>Source Files\Utility\Pipeline\Command</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceResources.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Source Files\Structure\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Source Files\Structure\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="RendererManager.cpp">
+      <Filter>Source Files\Structure\RendererManager</Filter>
+    </ClCompile>
+    <ClCompile Include="RootSignatureHelper.cpp">
+      <Filter>Source Files\Utility\Pipeline\Helper\RootSignature</Filter>
+    </ClCompile>
+    <ClCompile Include="Common.cpp">
+      <Filter>Source Files\Utility\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="RootSignatureManager.cpp">
+      <Filter>Source Files\Utility\Pipeline\RootSignature</Filter>
+    </ClCompile>
+    <ClCompile Include="DescriptorHeapManager.cpp">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLoader.cpp">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureResourceManager.cpp">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="BufferManagerBase.cpp">
+      <Filter>Source Files\Utility\Pipeline\Resources\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBufferManager.cpp">
+      <Filter>Source Files\Utility\Pipeline\Resources\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexBufferManager.cpp">
+      <Filter>Source Files\Utility\Pipeline\Resources\Buffers</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandListManager.cpp">
+      <Filter>Source Files\Utility\Pipeline\Command</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
