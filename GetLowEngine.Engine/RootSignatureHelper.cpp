@@ -1,12 +1,17 @@
 #include "pch.h"
 #include "RootSignatureHelper.h"
+#include "Common.h"
+
+std::shared_ptr<RootSignatureHelper> RootSignatureHelper::instance = nullptr;
 
 std::shared_ptr<RootSignatureHelper> RootSignatureHelper::GetInstance()
 {
 	if (instance == nullptr)
 	{
 		instance = std::make_shared<RootSignatureHelper>();
+		instance->m_params = std::vector<std::shared_ptr<RootParameter>>();
 	}
+	return instance;
 }
 
 
@@ -15,11 +20,16 @@ void RootSignatureHelper::InitDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE Type, 
 {
 	auto parameter = std::make_shared<RootParameter>();
 	parameter->InitAsDescriptorRange(Type, Register, Count, Visibility);
-	instance->rootSignatureManager->operator[](0)->AddNewParameter(parameter);
+	m_params.push_back(parameter);
 }
 
-void RootSignatureHelper::Init(UINT count)
+void RootSignatureHelper::Init()
 {
-	std::shared_ptr<RootSignatureManager> signatureManager = std::make_shared<RootSignatureManager>();
-	signatureManager->AddSignature();
+	rootSignatureManager = std::make_shared<RootSignatureManager>();
+	const auto dv = Common::GetInstance()->GetDeviceResources();
+	rootSignatureManager->AddSignature(dv, m_params.size(), 1);
+	for (auto & param : m_params)
+	{
+		rootSignatureManager->operator[](0)->AddNewParameter(param);
+	}
 }

@@ -112,6 +112,16 @@ void DX::DeviceResources::WaitForGpu()
 	m_fenceValues[m_currentFrame]++;
 }
 
+CD3DX12_CPU_DESCRIPTOR_HANDLE DX::DeviceResources::GetRenderTargetView()
+{
+	return CD3DX12_CPU_DESCRIPTOR_HANDLE(m_rtvHeap->GetCPUDescriptorHandleForHeapStart(), m_currentFrame, m_rtvDescriptorSize);
+}
+
+CD3DX12_CPU_DESCRIPTOR_HANDLE DX::DeviceResources::GetDepthStencilView()
+{
+	return CD3DX12_CPU_DESCRIPTOR_HANDLE(m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
+}
+
 void DX::DeviceResources::CreateDeviceIndependentResources()
 {
 

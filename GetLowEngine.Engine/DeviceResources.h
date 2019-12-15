@@ -36,14 +36,8 @@ namespace DX {
 		D3D12_VIEWPORT				GetScreenViewport() const { return m_screenViewport; }
 		UINT						GetCurrentFrameIndex() const { return m_currentFrame; }
 
-		CD3DX12_CPU_DESCRIPTOR_HANDLE GetRenderTargetView() const
-		{
-			return CD3DX12_CPU_DESCRIPTOR_HANDLE(m_rtvHeap->GetCPUDescriptorHandleForHeapStart(), m_currentFrame, m_rtvDescriptorSize);
-		}
-		CD3DX12_CPU_DESCRIPTOR_HANDLE GetDepthStencilView() const
-		{
-			return CD3DX12_CPU_DESCRIPTOR_HANDLE(m_dsvHeap->GetCPUDescriptorHandleForHeapStart());
-		}
+		CD3DX12_CPU_DESCRIPTOR_HANDLE GetRenderTargetView(); 
+		CD3DX12_CPU_DESCRIPTOR_HANDLE GetDepthStencilView();
 
 	private:
 		void CreateDeviceIndependentResources();

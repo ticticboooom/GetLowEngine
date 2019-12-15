@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "App.h"
-#include "CommonObjects.h"
 #include "RendererManager.h"
+#include "Common.h"
 
 RECT App::m_windowRect = RECT{ 0,0,0,0 };
 App* m_app;
@@ -55,7 +55,11 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 	isInitialised = true;
 	// Initialize the sample. OnInit is defined in each child-implementation of DXSample.
 	GetDeviceResources();
-
+	Common::GetInstance()->InitRootSignatureHelper();
+	m_rendererManager->Init();
+	Common::GetInstance()->GetRootSignatureHelper()->Init();
+	Common::GetInstance()->InitDescriptorHeapManager();
+	
 	ShowWindow(m_hwnd, nCmdShow);
 	ShowCursor(m_cursorVisible);
 	// Main sample loop.
@@ -115,7 +119,6 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 			GetDeviceResources()->Present();
 		}
 	}
-	CommonObjects::Reset();
 	ClipCursor(nullptr);
 	m_rendererManager->OnDeviceRemoved();
 
@@ -142,7 +145,6 @@ LRESULT CALLBACK App::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 				DirectX::XMFLOAT2(
 					float(rect.right),
 					float(rect.bottom)));
-			m_app->m_rendererManager->CreateWindowSizeDependentResources();
 		}
 	}
 	return 0;
@@ -171,8 +173,8 @@ std::shared_ptr<DX::DeviceResources> App::GetDeviceResources()
 	{
 		m_deviceResources = std::make_shared<DX::DeviceResources>();
 		m_deviceResources->SetWindow(m_hwnd);
-		CommonObjects::m_deviceResources = m_deviceResources;
-		m_rendererManager->CreateRenderers();
+		Common::GetInstance()->SetDeviceResource(m_deviceResources);
+		m_rendererManager->CreateRenderers(m_deviceResources);
 	}
 	return m_deviceResources;
 }

@@ -13,7 +13,7 @@ void GameMain::Update()
 
 void GameMain::Render()
 {
-	return true;
+
 }
 
 void GameMain::OnKeyDown(UINT key)

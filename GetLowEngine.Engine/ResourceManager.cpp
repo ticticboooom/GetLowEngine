@@ -1,4 +1,4 @@
-﻿#include "stdafx.h"
+﻿#include "pch.h"
 #include "ResourceManager.h"
 #include "DirectXHelper.h"
 /**

@@ -1,5 +1,5 @@
 #pragma once
-#include "stdafx.h"
+#include "pch.h"
 #include <vector>
 #include "RootSignatureManager.h"
 #include <map>
@@ -77,7 +77,7 @@ namespace Structures
 		std::vector<unsigned int> indices;
 		std::vector<Structures::Animation> animations;
 	};
-	struct D3DENGINE_API VerticesIndicesFromBin
+	struct VerticesIndicesFromBin
 	{
 		std::shared_ptr<std::vector<VertexTexCoordNormal>> vertices;
 		std::shared_ptr<std::vector<unsigned long>> indices;
