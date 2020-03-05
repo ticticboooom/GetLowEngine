@@ -34,9 +34,6 @@
     <Filter Include="Source Files\Utility\Pipeline\Helper\RootSignature">
       <UniqueIdentifier>{b637032d-7e20-4a15-9824-c367932d1074}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Utility\Common">
-      <UniqueIdentifier>{05a79f5c-ab1c-4362-86c7-2af9021360c8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Utility\Pipeline\Resources">
       <UniqueIdentifier>{98ca0723-6299-4644-8ce1-a55c900ca9ef}</UniqueIdentifier>
     </Filter>
@@ -83,9 +80,6 @@
     </ClInclude>
     <ClInclude Include="RootSignatureHelper.h">
       <Filter>Source Files\Utility\Pipeline\Helper\RootSignature</Filter>
-    </ClInclude>
-    <ClInclude Include="Common.h">
-      <Filter>Source Files\Utility\Common</Filter>
     </ClInclude>
     <ClInclude Include="RootSignatureManager.h">
       <Filter>Source Files\Utility\Pipeline\RootSignature</Filter>
@@ -145,9 +139,6 @@
     </ClCompile>
     <ClCompile Include="RootSignatureHelper.cpp">
       <Filter>Source Files\Utility\Pipeline\Helper\RootSignature</Filter>
-    </ClCompile>
-    <ClCompile Include="Common.cpp">
-      <Filter>Source Files\Utility\Common</Filter>
     </ClCompile>
     <ClCompile Include="RootSignatureManager.cpp">
       <Filter>Source Files\Utility\Pipeline\RootSignature</Filter>

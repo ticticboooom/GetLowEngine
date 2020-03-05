@@ -3,6 +3,7 @@
 #include "DirectXHelper.h"
 #include <DirectXMath.h>
 
+std::shared_ptr<DX::DeviceResources> DX::DeviceResources::instance = nullptr;
 
 DX::DeviceResources::DeviceResources(DXGI_FORMAT backBufferFormat, DXGI_FORMAT depthBufferFormat) :
 	m_currentFrame(0),
@@ -21,6 +22,11 @@ DX::DeviceResources::DeviceResources(DXGI_FORMAT backBufferFormat, DXGI_FORMAT d
 {
 	CreateDeviceIndependentResources();
 	CreateDeviceResources();
+}
+
+void DX::DeviceResources::Create(DXGI_FORMAT backBufferFormat, DXGI_FORMAT depthBufferFormat)
+{
+	instance = std::make_shared<DeviceResources>(backBufferFormat, depthBufferFormat);
 }
 
 void DX::DeviceResources::SetWindow(HWND window)

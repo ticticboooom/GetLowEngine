@@ -1,7 +1,8 @@
 #include "pch.h"
 #include "App.h"
+
+#include "RootSignatureHelper.h"
 #include "Scene.h"
-#include "Common.h"
 
 RECT App::m_windowRect = RECT{ 0,0,0,0 };
 App* m_app;
@@ -18,9 +19,9 @@ App::~App()
 {
 }
 
-void App::SetRendererManager(std::shared_ptr<Scene> rendererManager)
+void App::SetScene(std::shared_ptr<Scene> rendererManager)
 {
-	m_rendererManager = rendererManager;
+	m_scene = rendererManager;
 }
 
 int App::Run(HINSTANCE hInstance, int nCmdShow)
@@ -59,10 +60,8 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 	isInitialised = true;
 	// Initialize the sample. OnInit is defined in each child-implementation of DXSample.
 	GetDeviceResources();
-	Common::GetInstance()->InitRootSignatureHelper();
-	m_rendererManager->Init();
-	Common::GetInstance()->GetRootSignatureHelper()->Init();
-	Common::GetInstance()->InitDescriptorHeapManager();
+	m_scene->Init();
+	RootSignatureHelper::GetInstance()->Init();
 	
 	ShowWindow(m_hwnd, nCmdShow);
 	ShowCursor(m_cursorVisible);
@@ -98,17 +97,17 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 					m_cursorVisible = !m_cursorVisible;
 					ShowCursor(m_cursorVisible);
 				}
-				m_rendererManager->OnKeyDown(key);
+				m_scene->OnKeyDown(key);
 			}
 			else if (msg.message == WM_KEYUP)
 			{
-				m_rendererManager->OnKeyUp(static_cast<UINT8>(msg.wParam));
+				m_scene->OnKeyUp(static_cast<UINT8>(msg.wParam));
 			}
 			else if (msg.message == WM_MOUSEMOVE)
 			{
 				const int xLparam = GET_X_LPARAM(msg.lParam), yLparam = GET_Y_LPARAM(msg.lParam);
 				const int x = deaultCursorPos.x - xLparam, y = deaultCursorPos.y - yLparam;
-				m_rendererManager->OnMouseMoved(x, y);
+				m_scene->OnMouseMoved(x, y);
 				SetCursorPos(pt.x, pt.y);
 			}
 			else {
@@ -118,13 +117,13 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 		}
 		else
 		{
-			m_rendererManager->Update();
-			m_rendererManager->Render();
+			m_scene->Update();
+			m_scene->Render();
 			GetDeviceResources()->Present();
 		}
 	}
 	ClipCursor(nullptr);
-	m_rendererManager->OnDeviceRemoved();
+	m_scene->OnDeviceRemoved();
 
 	// Return this part of the WM_QUIT message to Windows.
 	return static_cast<char>(msg.wParam);
@@ -170,15 +169,15 @@ std::shared_ptr<DX::DeviceResources> App::GetDeviceResources()
 		// can be created.
 
 		m_deviceResources = nullptr;
-		m_rendererManager->OnDeviceRemoved();
+		m_scene->OnDeviceRemoved();
 	}
 
 	if (m_deviceResources == nullptr)
 	{
-		m_deviceResources = std::make_shared<DX::DeviceResources>();
+		DX::DeviceResources::Create();
+		m_deviceResources = DX::DeviceResources::GetInstance();
 		m_deviceResources->SetWindow(m_hwnd);
-		Common::GetInstance()->SetDeviceResource(m_deviceResources);
-		m_rendererManager->CreateRenderers(m_deviceResources);
+		m_scene->CreateRenderers(m_deviceResources);
 	}
 	return m_deviceResources;
 }

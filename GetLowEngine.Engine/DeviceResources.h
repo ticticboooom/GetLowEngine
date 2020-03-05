@@ -6,8 +6,11 @@ namespace DX {
 
 	class DeviceResources
 	{
+		
 	public:
 		DeviceResources(DXGI_FORMAT backBufferFormat = DXGI_FORMAT_B8G8R8A8_UNORM, DXGI_FORMAT depthBufferFormat = DXGI_FORMAT_D32_FLOAT);
+		static std::shared_ptr<DeviceResources> GetInstance() { return instance; }
+		static void Create(DXGI_FORMAT backBufferFormat = DXGI_FORMAT_B8G8R8A8_UNORM, DXGI_FORMAT depthBufferFormat = DXGI_FORMAT_D32_FLOAT);
 		void SetWindow(HWND window);
 		void SetLogicalSize(DirectX::XMFLOAT2 logicalSize);
 		void SetDpi(float dpi);
@@ -40,6 +43,7 @@ namespace DX {
 		CD3DX12_CPU_DESCRIPTOR_HANDLE GetDepthStencilView();
 
 	private:
+		static std::shared_ptr<DeviceResources> instance;
 		void CreateDeviceIndependentResources();
 		void CreateDeviceResources();
 		void CreateWindowSizeDependentResources();

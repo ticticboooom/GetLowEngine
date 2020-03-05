@@ -5,7 +5,6 @@ class RootSignatureHelper
 {
 
 public:
-	
 	static std::shared_ptr<RootSignatureHelper> GetInstance();
 	void InitDescriptorRange(D3D12_DESCRIPTOR_RANGE_TYPE Type, UINT Register, UINT Count,
 	                         D3D12_SHADER_VISIBILITY Visibility = D3D12_SHADER_VISIBILITY_ALL);

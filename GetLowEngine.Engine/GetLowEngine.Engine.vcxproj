@@ -157,7 +157,6 @@
     <ClInclude Include="App.h" />
     <ClInclude Include="BufferManagerBase.h" />
     <ClInclude Include="CommandListManager.h" />
-    <ClInclude Include="Common.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ConstantBufferManager.h" />
     <ClInclude Include="d3dx12.h" />
@@ -182,7 +181,6 @@
     <ClCompile Include="App.cpp" />
     <ClCompile Include="BufferManagerBase.cpp" />
     <ClCompile Include="CommandListManager.cpp" />
-    <ClCompile Include="Common.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="DescriptorHeapManager.cpp" />
     <ClCompile Include="DeviceResources.cpp" />

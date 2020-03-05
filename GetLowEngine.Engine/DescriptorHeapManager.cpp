@@ -13,14 +13,14 @@
  * @param deviceResources 
  */
 DescriptorHeapManager::DescriptorHeapManager(const int numDescriptors, D3D12_DESCRIPTOR_HEAP_TYPE type,
-	D3D12_DESCRIPTOR_HEAP_FLAGS flags, const std::shared_ptr<DX::DeviceResources> deviceResources): m_type(type), m_deviceResources(deviceResources)
+	D3D12_DESCRIPTOR_HEAP_FLAGS flags): m_type(type)
 {
 	// describes and creates the descriptor heap
 	m_desc = D3D12_DESCRIPTOR_HEAP_DESC{};
 	m_desc.NumDescriptors = numDescriptors;
 	m_desc.Type = type;
 	m_desc.Flags = flags;
-	ThrowIfFailed(m_deviceResources->GetD3DDevice()->CreateDescriptorHeap(&m_desc, IID_PPV_ARGS(&m_heap)));
+	ThrowIfFailed(DX::DeviceResources::GetInstance()->GetD3DDevice()->CreateDescriptorHeap(&m_desc, IID_PPV_ARGS(&m_heap)));
 	//NAME_D3D12_OBJECT(m_heap);
 }
 /**
