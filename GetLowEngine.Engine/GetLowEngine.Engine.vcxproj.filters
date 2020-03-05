@@ -52,6 +52,9 @@
     <Filter Include="Source Files\Structure\Scene">
       <UniqueIdentifier>{f002562d-4428-46f0-8fd2-be6441258995}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Structure\Scene\Manager">
+      <UniqueIdentifier>{a2a859cd-9c62-4b19-a042-9e0563800f29}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
