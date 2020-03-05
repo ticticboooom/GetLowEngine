@@ -1,11 +1,11 @@
 #pragma once
 #include "Component.h"
 
-class Renderer : public Component
+class ScenePart : public Component
 {
 public:
-	Renderer();
-	~Renderer() override;
+	ScenePart();
+	~ScenePart() override;
 	void CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources) override;
 	void Init() override;
 	void Update() override;

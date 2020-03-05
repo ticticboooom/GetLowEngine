@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "App.h"
-#include "RendererManager.h"
+#include "Scene.h"
 #include "Common.h"
 
 RECT App::m_windowRect = RECT{ 0,0,0,0 };
@@ -16,6 +16,11 @@ App::App() :
 
 App::~App()
 {
+}
+
+void App::SetRendererManager(std::shared_ptr<Scene> rendererManager)
+{
+	m_rendererManager = rendererManager;
 }
 
 int App::Run(HINSTANCE hInstance, int nCmdShow)
@@ -51,7 +56,6 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 		hInstance,
 		NULL);
 
-	m_rendererManager = std::make_shared<RendererManager>();
 	isInitialised = true;
 	// Initialize the sample. OnInit is defined in each child-implementation of DXSample.
 	GetDeviceResources();

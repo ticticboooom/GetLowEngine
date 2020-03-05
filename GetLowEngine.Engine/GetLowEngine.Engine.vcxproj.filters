@@ -25,12 +25,6 @@
     <Filter Include="Source Files\Structure\Component">
       <UniqueIdentifier>{274e9f30-42af-4ed1-8f05-bd1391a2e737}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Structure\Renderer">
-      <UniqueIdentifier>{b6a48473-ffe4-4efa-985e-4e89b21a07cb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Structure\RendererManager">
-      <UniqueIdentifier>{f002562d-4428-46f0-8fd2-be6441258995}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Utility\Pipeline\Helper">
       <UniqueIdentifier>{00f1a15c-822e-42e9-9244-21365df7ded6}</UniqueIdentifier>
     </Filter>
@@ -51,6 +45,15 @@
     </Filter>
     <Filter Include="Source Files\Utility\Pipeline\Command">
       <UniqueIdentifier>{fe4a2709-56b7-40d9-986c-5c9cb356d054}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structure\SceneObject">
+      <UniqueIdentifier>{45596f59-f2bf-47cb-b8e2-fb34ca9270e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structure\ScenePart">
+      <UniqueIdentifier>{b6a48473-ffe4-4efa-985e-4e89b21a07cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Structure\Scene">
+      <UniqueIdentifier>{f002562d-4428-46f0-8fd2-be6441258995}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -77,12 +80,6 @@
     </ClInclude>
     <ClInclude Include="Component.h">
       <Filter>Source Files\Structure\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="RendererManager.h">
-      <Filter>Source Files\Structure\RendererManager</Filter>
-    </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>Source Files\Structure\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="RootSignatureHelper.h">
       <Filter>Source Files\Utility\Pipeline\Helper\RootSignature</Filter>
@@ -120,6 +117,15 @@
     <ClInclude Include="CommandListManager.h">
       <Filter>Source Files\Utility\Pipeline\Command</Filter>
     </ClInclude>
+    <ClInclude Include="ScenePart.h">
+      <Filter>Source Files\Structure\ScenePart</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Source Files\Structure\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObject.h">
+      <Filter>Source Files\Structure\SceneObject</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -136,12 +142,6 @@
     </ClCompile>
     <ClCompile Include="Component.cpp">
       <Filter>Source Files\Structure\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Renderer.cpp">
-      <Filter>Source Files\Structure\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="RendererManager.cpp">
-      <Filter>Source Files\Structure\RendererManager</Filter>
     </ClCompile>
     <ClCompile Include="RootSignatureHelper.cpp">
       <Filter>Source Files\Utility\Pipeline\Helper\RootSignature</Filter>
@@ -175,6 +175,15 @@
     </ClCompile>
     <ClCompile Include="CommandListManager.cpp">
       <Filter>Source Files\Utility\Pipeline\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenePart.cpp">
+      <Filter>Source Files\Structure\ScenePart</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Source Files\Structure\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObject.cpp">
+      <Filter>Source Files\Structure\SceneObject</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

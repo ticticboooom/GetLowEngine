@@ -1,11 +1,10 @@
 #include "pch.h"
-#include "RendererManager.h"
+#include "Scene.h"
 
-class Renderer;
-RendererManager::RendererManager()
+Scene::Scene()
 = default;
 
-void RendererManager::CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources)
+void Scene::CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources)
 {
 	for (auto renderer : *renderers)
 	{
@@ -13,7 +12,7 @@ void RendererManager::CreateRenderers(const std::shared_ptr<DX::DeviceResources>
 	}
 }
 
-void RendererManager::Init()
+void Scene::Init()
 {
 	for (auto renderer : *renderers)
 	{
@@ -21,7 +20,7 @@ void RendererManager::Init()
 	}
 }
 
-void RendererManager::Update()
+void Scene::Update()
 {
 	for (auto renderer : *renderers)
 	{
@@ -29,7 +28,7 @@ void RendererManager::Update()
 	}
 }
 
-void RendererManager::Render()
+void Scene::Render()
 {
 	for (auto renderer : *renderers)
 	{
@@ -37,7 +36,7 @@ void RendererManager::Render()
 	}
 }
 
-void RendererManager::OnKeyDown(UINT key)
+void Scene::OnKeyDown(UINT key)
 {
 	for (auto renderer : *renderers)
 	{
@@ -45,7 +44,7 @@ void RendererManager::OnKeyDown(UINT key)
 	}
 }
 
-void RendererManager::OnKeyUp(UINT key)
+void Scene::OnKeyUp(UINT key)
 {
 	for (auto renderer : *renderers)
 	{
@@ -53,7 +52,7 @@ void RendererManager::OnKeyUp(UINT key)
 	}
 }
 
-void RendererManager::OnMouseMoved(float x, float y)
+void Scene::OnMouseMoved(float x, float y)
 {
 	for (auto renderer : *renderers)
 	{
@@ -61,7 +60,7 @@ void RendererManager::OnMouseMoved(float x, float y)
 	}
 }
 
-void RendererManager::OnWindowSizeChanged()
+void Scene::OnWindowSizeChanged()
 {
 	for (auto renderer : *renderers)
 	{
@@ -69,7 +68,7 @@ void RendererManager::OnWindowSizeChanged()
 	}
 }
 
-void RendererManager::OnSuspending()
+void Scene::OnSuspending()
 {
 	for (auto renderer : *renderers)
 	{
@@ -77,7 +76,7 @@ void RendererManager::OnSuspending()
 	}
 }
 
-void RendererManager::OnResuming()
+void Scene::OnResuming()
 {
 	for (auto renderer : *renderers)
 	{
@@ -85,7 +84,7 @@ void RendererManager::OnResuming()
 	}
 }
 
-void RendererManager::OnDeviceRemoved()
+void Scene::OnDeviceRemoved()
 {
 	for (auto renderer : *renderers)
 	{
@@ -93,7 +92,7 @@ void RendererManager::OnDeviceRemoved()
 	}
 }
 
-void RendererManager::AddRenderer(std::shared_ptr<Renderer> renderer)
+void Scene::AddRenderer(std::shared_ptr<ScenePart> renderer)
 {
 	renderers->push_back(renderer);
 }

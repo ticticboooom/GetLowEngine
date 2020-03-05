@@ -1,13 +1,10 @@
 #pragma once
 #include "GameMain.h"
-#include "Renderer.h"
-#include <vector>
 
-
-class RendererManager : public GameMain
+class SceneObject : GameMain
 {
-public:
-	RendererManager();
+	SceneObject();
+	~SceneObject();
 	void CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources) override;
 	void Init() override;
 	void Update() override;
@@ -19,9 +16,5 @@ public:
 	void OnSuspending() override;
 	void OnResuming() override;
 	void OnDeviceRemoved() override;
-	void AddRenderer(std::shared_ptr<Renderer> renderer);
-
-protected:
-	std::shared_ptr<std::vector<std::shared_ptr<Renderer>>> renderers;
 };
 
