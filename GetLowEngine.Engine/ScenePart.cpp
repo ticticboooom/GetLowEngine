@@ -25,18 +25,6 @@ void ScenePart::Render()
 {
 }
 
-void ScenePart::OnKeyDown(UINT key)
-{
-}
-
-void ScenePart::OnKeyUp(UINT key)
-{
-}
-
-void ScenePart::OnMouseMoved(float x, float y)
-{
-}
-
 void ScenePart::OnWindowSizeChanged()
 {
 }

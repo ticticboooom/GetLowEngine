@@ -36,30 +36,6 @@ void Scene::Render()
 	}
 }
 
-void Scene::OnKeyDown(UINT key)
-{
-	for (auto renderer : *renderers)
-	{
-		renderer->OnKeyDown(key);
-	}
-}
-
-void Scene::OnKeyUp(UINT key)
-{
-	for (auto renderer : *renderers)
-	{
-		renderer->OnKeyDown(key);
-	}
-}
-
-void Scene::OnMouseMoved(float x, float y)
-{
-	for (auto renderer : *renderers)
-	{
-		renderer->OnMouseMoved(x, y);
-	}
-}
-
 void Scene::OnWindowSizeChanged()
 {
 	for (auto renderer : *renderers)

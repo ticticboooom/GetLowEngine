@@ -10,9 +10,6 @@ public:
 	void Init() override;
 	void Update() override;
 	void Render() override;
-	void OnKeyDown(UINT key) override;
-	void OnKeyUp(UINT key) override;
-	void OnMouseMoved(float x, float y) override;
 	void OnWindowSizeChanged() override;
 	void OnSuspending() override;
 	void OnResuming() override;
