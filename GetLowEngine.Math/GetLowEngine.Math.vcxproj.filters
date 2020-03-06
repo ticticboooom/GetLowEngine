@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Vectors">
+      <UniqueIdentifier>{0d95d2d1-d696-40cd-a34c-b8c2bce6e9f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Base">
+      <UniqueIdentifier>{92d35c6d-1dcf-4aab-a254-d10f164fa5ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector2">
+      <UniqueIdentifier>{dd85e2ca-afd3-4707-a4e5-01d3749045e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector2\Base">
+      <UniqueIdentifier>{5058043c-028e-4d88-aff3-652c0c23d93a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector2\Float">
+      <UniqueIdentifier>{c37edc87-8f83-4d91-9ac9-fd11828d8599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector2\Double">
+      <UniqueIdentifier>{9b576353-e7aa-4b19-a37b-07aa5e5bad0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector2\Integer">
+      <UniqueIdentifier>{e657cd14-fdb4-4ced-a8b6-b2854fbd73ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector3">
+      <UniqueIdentifier>{08d3a8cb-871c-4efc-9670-b56c4ca7bf9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector3\Base">
+      <UniqueIdentifier>{b56a1100-7617-4dcd-96a2-fc044c0721f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector3\Float">
+      <UniqueIdentifier>{df93deba-2f23-4e84-b07b-5e28ee427501}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector3\Double">
+      <UniqueIdentifier>{a5139b0a-60b2-407c-8559-a7ba79800a2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Vectors\Vector3\Integer">
+      <UniqueIdentifier>{e5cec09a-7f03-4864-8cf4-fc1c1a6042c5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorBase.h">
+      <Filter>Source Files\Vectors\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2I.h">
+      <Filter>Source Files\Vectors\Vector2\Integer</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2D.h">
+      <Filter>Source Files\Vectors\Vector2\Double</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2Base.h">
+      <Filter>Source Files\Vectors\Vector2\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2F.h">
+      <Filter>Source Files\Vectors\Vector2\Float</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3Base.h">
+      <Filter>Source Files\Vectors\Vector3\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3F.h">
+      <Filter>Source Files\Vectors\Vector3\Float</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3D.h">
+      <Filter>Source Files\Vectors\Vector3\Double</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3I.h">
+      <Filter>Source Files\Vectors\Vector3\Integer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GetLowEngine.Math.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

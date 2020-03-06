@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "App.h"
 
+
+
+#include "../GetLowEngine.Math/Vector2I.h"
+#include "Keyboard.h"
+#include "Mouse.h"
 #include "RootSignatureHelper.h"
 #include "Scene.h"
 
@@ -97,17 +102,19 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 					m_cursorVisible = !m_cursorVisible;
 					ShowCursor(m_cursorVisible);
 				}
-				m_scene->OnKeyDown(key);
+				Keyboard::GetInstance()->SetPressed(key);
 			}
 			else if (msg.message == WM_KEYUP)
 			{
-				m_scene->OnKeyUp(static_cast<UINT8>(msg.wParam));
+				Keyboard::GetInstance()->SetReleased(static_cast<UINT8>(msg.wParam));
 			}
 			else if (msg.message == WM_MOUSEMOVE)
 			{
 				const int xLparam = GET_X_LPARAM(msg.lParam), yLparam = GET_Y_LPARAM(msg.lParam);
 				const int x = deaultCursorPos.x - xLparam, y = deaultCursorPos.y - yLparam;
-				m_scene->OnMouseMoved(x, y);
+				auto vec = Vector2I(x, y);
+				Mouse::GetInstance()->SetMouseDeltaPosition(vec);
+				Mouse::GetInstance()->SetMousePosition(vec);
 				SetCursorPos(pt.x, pt.y);
 			}
 			else {

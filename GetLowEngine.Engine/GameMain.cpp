@@ -16,18 +16,6 @@ void GameMain::Render()
 
 }
 
-void GameMain::OnKeyDown(UINT key)
-{
-}
-
-void GameMain::OnKeyUp(UINT key)
-{
-}
-
-void GameMain::OnMouseMoved(float x, float y)
-{
-}
-
 void GameMain::OnWindowSizeChanged()
 {
 }

@@ -11,9 +11,6 @@ public:
 	virtual void Init() = 0;
 	virtual void Update();
 	virtual void Render();
-	virtual void OnKeyDown(UINT key);
-	virtual void OnKeyUp(UINT key);
-	virtual void OnMouseMoved(float x, float y);
 
 	virtual void OnWindowSizeChanged();
 	virtual void OnSuspending();

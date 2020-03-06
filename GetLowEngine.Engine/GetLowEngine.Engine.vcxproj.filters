@@ -55,6 +55,15 @@
     <Filter Include="Source Files\Structure\Scene\Manager">
       <UniqueIdentifier>{a2a859cd-9c62-4b19-a042-9e0563800f29}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utility\Input">
+      <UniqueIdentifier>{2d507bed-8091-4d4f-b914-af3506b006a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Input\Keyboard">
+      <UniqueIdentifier>{b5dd8f17-cde5-4ad9-a90d-d76ee69db721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Input\Mouse">
+      <UniqueIdentifier>{a6d146b9-d690-49d6-8f9a-edadd6f56ec7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -123,6 +132,12 @@
     <ClInclude Include="SceneObject.h">
       <Filter>Source Files\Structure\SceneObject</Filter>
     </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Source Files\Utility\Input\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Source Files\Utility\Input\Mouse</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -178,6 +193,12 @@
     </ClCompile>
     <ClCompile Include="SceneObject.cpp">
       <Filter>Source Files\Structure\SceneObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Source Files\Utility\Input\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Source Files\Utility\Input\Mouse</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
