@@ -9,7 +9,7 @@ SceneObject::~SceneObject()
 {
 }
 
-void SceneObject::CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources)
+void SceneObject::CreateRenderers()
 {
 }
 

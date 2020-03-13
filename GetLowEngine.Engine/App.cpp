@@ -8,6 +8,7 @@
 #include "Mouse.h"
 #include "RootSignatureHelper.h"
 #include "Scene.h"
+#include "SceneManager.h"
 
 RECT App::m_windowRect = RECT{ 0,0,0,0 };
 App* m_app;
@@ -24,10 +25,6 @@ App::~App()
 {
 }
 
-void App::SetScene(std::shared_ptr<Scene> rendererManager)
-{
-	m_scene = rendererManager;
-}
 
 int App::Run(HINSTANCE hInstance, int nCmdShow)
 {
@@ -65,7 +62,7 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 	isInitialised = true;
 	// Initialize the sample. OnInit is defined in each child-implementation of DXSample.
 	GetDeviceResources();
-	m_scene->Init();
+	SceneManager::GetInstance()->Init();
 	RootSignatureHelper::GetInstance()->Init();
 	
 	ShowWindow(m_hwnd, nCmdShow);
@@ -124,13 +121,13 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 		}
 		else
 		{
-			m_scene->Update();
-			m_scene->Render();
+			SceneManager::GetInstance()->Update();
+			SceneManager::GetInstance()->Render();
 			GetDeviceResources()->Present();
 		}
 	}
 	ClipCursor(nullptr);
-	m_scene->OnDeviceRemoved();
+	SceneManager::GetInstance()->OnDeviceRemoved();
 
 	// Return this part of the WM_QUIT message to Windows.
 	return static_cast<char>(msg.wParam);
@@ -184,7 +181,7 @@ std::shared_ptr<DX::DeviceResources> App::GetDeviceResources()
 		DX::DeviceResources::Create();
 		m_deviceResources = DX::DeviceResources::GetInstance();
 		m_deviceResources->SetWindow(m_hwnd);
-		m_scene->CreateRenderers(m_deviceResources);
+		m_scene->CreateRenderers();
 	}
 	return m_deviceResources;
 }

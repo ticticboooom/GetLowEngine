@@ -9,7 +9,7 @@ ScenePart::ScenePart()
 ScenePart::~ScenePart()
 = default;
 
-void ScenePart::CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources)
+void ScenePart::CreateRenderers()
 {
 }
 

@@ -6,7 +6,7 @@ class ScenePart : public Component
 public:
 	ScenePart();
 	~ScenePart() override;
-	void CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources) override;
+	void CreateRenderers() override;
 	void Init() override;
 	void Update() override;
 	void Render() override;

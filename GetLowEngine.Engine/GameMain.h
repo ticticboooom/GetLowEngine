@@ -7,7 +7,7 @@ class GameMain
 public:
 	GameMain() = default;
 	virtual ~GameMain() = default;
-	virtual void CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources) = 0;
+	virtual void CreateRenderers() = 0;
 	virtual void Init() = 0;
 	virtual void Update();
 	virtual void Render();

@@ -2,7 +2,7 @@
 #include "GameMain.h"
 
 
-void GameMain::CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources)
+void GameMain::CreateRenderers()
 {
 	
 }

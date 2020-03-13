@@ -4,11 +4,11 @@
 Scene::Scene()
 = default;
 
-void Scene::CreateRenderers(const std::shared_ptr<DX::DeviceResources>& deviceResources)
+void Scene::CreateRenderers()
 {
 	for (auto renderer : *renderers)
 	{
-		renderer->CreateRenderers(deviceResources);
+		renderer->CreateRenderers();
 	}
 }
 
