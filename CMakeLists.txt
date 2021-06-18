@@ -1,0 +1,108 @@
+cmake_minimum_required(VERSION 3.19)
+project(GetLowEngine)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(GetLowEngine.Engine)
+include_directories(GetLowEngine.Engine/x64)
+include_directories(GetLowEngine.Engine/x64/Debug)
+include_directories(GetLowEngine.Math)
+include_directories(GetLowEngine.Math/x64)
+include_directories(GetLowEngine.Math/x64/Debug)
+include_directories(GetLowEngine.Sample)
+include_directories(GetLowEngine.Sample/x64)
+include_directories(GetLowEngine.Sample/x64/Debug)
+include_directories(Samples/GetLowEngine.RollingDevSample/GetLowEngine.RollingDevSample)
+
+add_executable(GetLowEngine
+        .eclipse-workspace/.metadata/.plugins/org.eclipse.cdt.make.core/specs.c
+        .eclipse-workspace/.metadata/.plugins/org.eclipse.cdt.make.core/specs.cpp
+        GetLowEngine.Engine/x64/Debug/GetLowEngine.Engine.pch
+        GetLowEngine.Engine/App.cpp
+        GetLowEngine.Engine/App.h
+        GetLowEngine.Engine/BufferManagerBase.cpp
+        GetLowEngine.Engine/BufferManagerBase.h
+        GetLowEngine.Engine/CommandListManager.cpp
+        GetLowEngine.Engine/CommandListManager.h
+        GetLowEngine.Engine/Component.cpp
+        GetLowEngine.Engine/Component.h
+        GetLowEngine.Engine/ConstantBufferManager.h
+        GetLowEngine.Engine/d3dx12.h
+        GetLowEngine.Engine/DescriptorHeapManager.cpp
+        GetLowEngine.Engine/DescriptorHeapManager.h
+        GetLowEngine.Engine/DeviceResources.cpp
+        GetLowEngine.Engine/DeviceResources.h
+        GetLowEngine.Engine/DirectXHelper.h
+        GetLowEngine.Engine/framework.h
+        GetLowEngine.Engine/GameMain.cpp
+        GetLowEngine.Engine/GameMain.h
+        GetLowEngine.Engine/IndexBufferManager.cpp
+        GetLowEngine.Engine/IndexBufferManager.h
+        GetLowEngine.Engine/Keyboard.cpp
+        GetLowEngine.Engine/Keyboard.h
+        GetLowEngine.Engine/Mouse.cpp
+        GetLowEngine.Engine/Mouse.h
+        GetLowEngine.Engine/PathManager.cpp
+        GetLowEngine.Engine/PathManager.h
+        GetLowEngine.Engine/pch.cpp
+        GetLowEngine.Engine/pch.h
+        GetLowEngine.Engine/PSOManager.cpp
+        GetLowEngine.Engine/PSOManager.h
+        GetLowEngine.Engine/ResourceManager.cpp
+        GetLowEngine.Engine/ResourceManager.h
+        GetLowEngine.Engine/RootSignatureHelper.cpp
+        GetLowEngine.Engine/RootSignatureHelper.h
+        GetLowEngine.Engine/RootSignatureManager.cpp
+        GetLowEngine.Engine/RootSignatureManager.h
+        GetLowEngine.Engine/Scene.cpp
+        GetLowEngine.Engine/Scene.h
+        GetLowEngine.Engine/SceneManager.cpp
+        GetLowEngine.Engine/SceneManager.h
+        GetLowEngine.Engine/SceneObject.cpp
+        GetLowEngine.Engine/SceneObject.h
+        GetLowEngine.Engine/ScenePart.cpp
+        GetLowEngine.Engine/ScenePart.h
+        GetLowEngine.Engine/ShaderLoader.cpp
+        GetLowEngine.Engine/ShaderLoader.h
+        GetLowEngine.Engine/Structures.h
+        GetLowEngine.Engine/TextureLoader.cpp
+        GetLowEngine.Engine/TextureLoader.h
+        GetLowEngine.Engine/TextureResourceManager.cpp
+        GetLowEngine.Engine/TextureResourceManager.h
+        GetLowEngine.Engine/Vec2.h
+        GetLowEngine.Engine/VertexBufferManager.cpp
+        GetLowEngine.Engine/VertexBufferManager.h
+        GetLowEngine.Math/x64/Debug/GetLowEngine.Math.pch
+        GetLowEngine.Math/framework.h
+        GetLowEngine.Math/GetLowEngine.Math.cpp
+        GetLowEngine.Math/pch.cpp
+        GetLowEngine.Math/pch.h
+        GetLowEngine.Math/Vector2Base.h
+        GetLowEngine.Math/Vector2D.h
+        GetLowEngine.Math/Vector2F.h
+        GetLowEngine.Math/Vector2I.h
+        GetLowEngine.Math/Vector3Base.h
+        GetLowEngine.Math/Vector3D.h
+        GetLowEngine.Math/Vector3F.h
+        GetLowEngine.Math/Vector3I.h
+        GetLowEngine.Math/VectorBase.h
+        GetLowEngine.Sample/x64/Debug/GetLowEngine.Sample.pch
+        GetLowEngine.Sample/d3dx12.h
+        GetLowEngine.Sample/framework.h
+        GetLowEngine.Sample/Game.cpp
+        GetLowEngine.Sample/Game.h
+        GetLowEngine.Sample/GameScene.cpp
+        GetLowEngine.Sample/GameScene.h
+        GetLowEngine.Sample/GetLowEngine.Sample.cpp
+        GetLowEngine.Sample/GetLowEngine.Sample.h
+        GetLowEngine.Sample/PlayerScenePart.cpp
+        GetLowEngine.Sample/PlayerScenePart.h
+        GetLowEngine.Sample/Resource.h
+        GetLowEngine.Sample/stdafx.cpp
+        GetLowEngine.Sample/stdafx.h
+        GetLowEngine.Sample/targetver.h
+        Samples/GetLowEngine.RollingDevSample/GetLowEngine.RollingDevSample/framework.h
+        Samples/GetLowEngine.RollingDevSample/GetLowEngine.RollingDevSample/Main.cpp
+        Samples/GetLowEngine.RollingDevSample/GetLowEngine.RollingDevSample/Main.h
+        Samples/GetLowEngine.RollingDevSample/GetLowEngine.RollingDevSample/Resource.h
+        Samples/GetLowEngine.RollingDevSample/GetLowEngine.RollingDevSample/targetver.h)

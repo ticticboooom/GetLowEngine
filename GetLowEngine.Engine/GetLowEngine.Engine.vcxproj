@@ -169,7 +169,9 @@
     <ClInclude Include="IndexBufferManager.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="PathManager.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PSOManager.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneObject.h" />
     <ClInclude Include="ScenePart.h" />
@@ -177,6 +179,7 @@
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="RootSignatureHelper.h" />
     <ClInclude Include="RootSignatureManager.h" />
+    <ClInclude Include="ShaderLoader.h" />
     <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="TextureResourceManager.h" />
     <ClInclude Include="VertexBufferManager.h" />
@@ -192,12 +195,14 @@
     <ClCompile Include="IndexBufferManager.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PSOManager.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneObject.cpp" />
     <ClCompile Include="ScenePart.cpp" />
@@ -205,6 +210,7 @@
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="RootSignatureHelper.cpp" />
     <ClCompile Include="RootSignatureManager.cpp" />
+    <ClCompile Include="ShaderLoader.cpp" />
     <ClCompile Include="TextureLoader.cpp" />
     <ClCompile Include="TextureResourceManager.cpp" />
     <ClCompile Include="VertexBufferManager.cpp" />

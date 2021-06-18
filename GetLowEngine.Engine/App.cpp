@@ -63,7 +63,6 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 	// Initialize the sample. OnInit is defined in each child-implementation of DXSample.
 	GetDeviceResources();
 	SceneManager::GetInstance()->Init();
-	RootSignatureHelper::GetInstance()->Init();
 	
 	ShowWindow(m_hwnd, nCmdShow);
 	ShowCursor(m_cursorVisible);
@@ -173,7 +172,6 @@ std::shared_ptr<DX::DeviceResources> App::GetDeviceResources()
 		// can be created.
 
 		m_deviceResources = nullptr;
-		m_scene->OnDeviceRemoved();
 	}
 
 	if (m_deviceResources == nullptr)
@@ -181,7 +179,7 @@ std::shared_ptr<DX::DeviceResources> App::GetDeviceResources()
 		DX::DeviceResources::Create();
 		m_deviceResources = DX::DeviceResources::GetInstance();
 		m_deviceResources->SetWindow(m_hwnd);
-		m_scene->CreateRenderers();
+		SceneManager::GetInstance()->CreateRenderers();
 	}
 	return m_deviceResources;
 }

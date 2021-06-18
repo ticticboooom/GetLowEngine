@@ -17,8 +17,13 @@ public:
 	void OnResuming() override;
 	void OnDeviceRemoved() override;
 	void AddRenderer(std::shared_ptr<ScenePart> renderer);
+	CD3DX12_SHADER_BYTECODE GetVertexShader();
+	CD3DX12_SHADER_BYTECODE GetPixelShader();
 
 protected:
 	std::shared_ptr<std::vector<std::shared_ptr<ScenePart>>> renderers;
+
+private:
+	std::unique_ptr<std::wstring> assetPath;
 };
 

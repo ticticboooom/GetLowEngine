@@ -3,6 +3,8 @@
 #include "DirectXHelper.h"
 #include <memory>
 
+
+std::shared_ptr<CommandListManager> CommandListManager::instance = nullptr;
 /**
  * @brief Construct a new Command List Manager:: Command List Manager object
  *  creates a command list and gives it a debug name
@@ -27,6 +29,13 @@ CommandListManager::~CommandListManager()
 {
 }
 
+void CommandListManager::Create(std::shared_ptr<DX::DeviceResources> deviceResources, ID3D12PipelineState* pipelineState, D3D12_COMMAND_LIST_TYPE type)
+{
+	if (instance == nullptr) {
+		instance = std::make_shared<CommandListManager>(deviceResources, pipelineState, type);
+	}
+}
+
 /**
  * @brief gets the raw pointer of the command list
  * 
@@ -35,6 +44,11 @@ CommandListManager::~CommandListManager()
 ID3D12GraphicsCommandList* CommandListManager::Get()
 {
 	return m_commandList.Get();
+}
+
+std::shared_ptr<CommandListManager> CommandListManager::GetInstance()
+{
+	return instance;
 }
 
 /**

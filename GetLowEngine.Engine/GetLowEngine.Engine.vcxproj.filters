@@ -64,6 +64,15 @@
     <Filter Include="Source Files\Utility\Input\Mouse">
       <UniqueIdentifier>{a6d146b9-d690-49d6-8f9a-edadd6f56ec7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utility\Pipeline\PSO">
+      <UniqueIdentifier>{a325fa9e-4b9a-4378-8ebe-26661186b574}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Path">
+      <UniqueIdentifier>{954cc6b7-22b5-4123-93d8-01a87d62057f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Shader">
+      <UniqueIdentifier>{5c3e5d1f-26e3-4dc4-acbb-1352aedecf05}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -141,6 +150,15 @@
     <ClInclude Include="SceneManager.h">
       <Filter>Source Files\Structure\Scene\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="PSOManager.h">
+      <Filter>Source Files\Utility\Pipeline\PSO</Filter>
+    </ClInclude>
+    <ClInclude Include="PathManager.h">
+      <Filter>Source Files\Utility\Path</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderLoader.h">
+      <Filter>Source Files\Utility\Shader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -205,6 +223,15 @@
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Source Files\Structure\Scene\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="PSOManager.cpp">
+      <Filter>Source Files\Utility\Pipeline\PSO</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManager.cpp">
+      <Filter>Source Files\Utility\Path</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderLoader.cpp">
+      <Filter>Source Files\Utility\Shader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

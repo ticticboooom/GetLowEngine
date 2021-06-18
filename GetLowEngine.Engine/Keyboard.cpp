@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Keyboard.h"
-
+std::shared_ptr<Keyboard> Keyboard::instance = nullptr;
 std::shared_ptr<Keyboard> Keyboard::GetInstance()
 {
 	if (instance == nullptr)

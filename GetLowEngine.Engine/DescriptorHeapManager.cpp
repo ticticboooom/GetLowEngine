@@ -3,7 +3,7 @@
 #include "DeviceResources.h"
 #include "DirectXHelper.h"
 #include "CommandListManager.h"
-
+std::shared_ptr<DescriptorHeapManager> DescriptorHeapManager::instance = nullptr;
 /**
  * @brief Construct a new Descriptor Heap Manager:: Descriptor Heap Manager object
  *  the descriptor heap stores the descriptors of the resources used in heap which is used to get the resourc on rendering along with the root signature to give the GPU resources to render

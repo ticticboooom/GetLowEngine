@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Mouse.h"
-
+std::shared_ptr<Mouse> Mouse::instance = nullptr;
 std::shared_ptr<Mouse> Mouse::GetInstance()
 {
 	if (instance == nullptr)

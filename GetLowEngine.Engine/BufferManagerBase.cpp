@@ -25,7 +25,6 @@ BufferManagerBase::BufferManagerBase(UINT size, BYTE* data, D3D12_RESOURCE_STATE
 
 BufferManagerBase::~BufferManagerBase()
 {
-
 	m_resourceManager.release();
 	m_resourceManager = nullptr;
 }

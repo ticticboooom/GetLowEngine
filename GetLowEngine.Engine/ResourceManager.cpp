@@ -25,7 +25,8 @@ void ResourceManager::UpdateSubresource(BYTE* data, UINT size, const UINT width,
 	subresource.RowPitch = width;
 	subresource.SlicePitch = width * height;
 	m_commandListManager->UpdateSubresource(m_resource.Get(), m_resourceUpload.Get(), &subresource);
-	m_commandListManager->CreateResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(m_resource.Get(), D3D12_RESOURCE_STATE_COPY_DEST, state));
+	auto resource_barrier = CD3DX12_RESOURCE_BARRIER::Transition(m_resource.Get(), D3D12_RESOURCE_STATE_COPY_DEST, state);
+	m_commandListManager->CreateResourceBarrier(1,&resource_barrier);
 }
 
 /**
