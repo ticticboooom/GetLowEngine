@@ -40,3 +40,8 @@ void ScenePart::OnResuming()
 void ScenePart::OnDeviceRemoved()
 {
 }
+
+void ScenePart::AddObject(SceneObject obj)
+{
+	sceneObjects->push_back(obj);
+}

@@ -8,12 +8,12 @@
 class VertexBufferManager : public BufferManagerBase
 {
 public:
-	 VertexBufferManager(std::shared_ptr<std::vector<Structures::VertexTexCoordNormal>> vertices,
+	 VertexBufferManager(std::shared_ptr<std::vector<VertexTexCoordNormal>> vertices,
 	                    const std::shared_ptr<DX::DeviceResources> deviceResources,
 	                    const std::shared_ptr<CommandListManager> commandListManager);
 	 ~VertexBufferManager();
 	 D3D12_VERTEX_BUFFER_VIEW CreateVertexBufferView() const;
 private:
-	std::shared_ptr<std::vector<Structures::VertexTexCoordNormal>> m_vertices; /// vertices
+	std::shared_ptr<std::vector<VertexTexCoordNormal>> m_vertices; /// vertices
 	size_t m_verticesSize; /// count of vertices
 };

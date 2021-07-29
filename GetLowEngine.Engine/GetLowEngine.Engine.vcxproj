@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
+    <ClInclude Include="BasicMeshComponent.h" />
     <ClInclude Include="BufferManagerBase.h" />
     <ClInclude Include="CommandListManager.h" />
     <ClInclude Include="Component.h" />
@@ -180,12 +181,14 @@
     <ClInclude Include="RootSignatureHelper.h" />
     <ClInclude Include="RootSignatureManager.h" />
     <ClInclude Include="ShaderLoader.h" />
+    <ClInclude Include="Structures.h" />
     <ClInclude Include="TextureLoader.h" />
     <ClInclude Include="TextureResourceManager.h" />
     <ClInclude Include="VertexBufferManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
+    <ClCompile Include="BasicMeshComponent.cpp" />
     <ClCompile Include="BufferManagerBase.cpp" />
     <ClCompile Include="CommandListManager.cpp" />
     <ClCompile Include="Component.cpp" />

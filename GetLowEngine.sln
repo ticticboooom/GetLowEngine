@@ -1,13 +1,14 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29411.108
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetLowEngine.Engine", "GetLowEngine.Engine\GetLowEngine.Engine.vcxproj", "{40AB16D2-B0D0-410C-900F-6F1478660C9A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetLowEngine.Math", "GetLowEngine.Math\GetLowEngine.Math.vcxproj", "{7174C96D-0859-44F3-9B96-52259472B7B0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetLowEngine.Sample", "GetLowEngine.Sample\GetLowEngine.Sample.vcxproj", "{4EBBA15B-EF9E-4FB5-A158-54CD87FE79D4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GetLowEngine.MeshCompiler", "GetLowEngine.MeshCompiler\GetLowEngine.MeshCompiler.vcxproj", "{9DC63E56-FB74-43AD-8052-0223A07866C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +42,14 @@ Global
 		{4EBBA15B-EF9E-4FB5-A158-54CD87FE79D4}.Release|x64.Build.0 = Release|x64
 		{4EBBA15B-EF9E-4FB5-A158-54CD87FE79D4}.Release|x86.ActiveCfg = Release|Win32
 		{4EBBA15B-EF9E-4FB5-A158-54CD87FE79D4}.Release|x86.Build.0 = Release|Win32
+		{9DC63E56-FB74-43AD-8052-0223A07866C0}.Debug|x64.ActiveCfg = Debug|x64
+		{9DC63E56-FB74-43AD-8052-0223A07866C0}.Debug|x64.Build.0 = Debug|x64
+		{9DC63E56-FB74-43AD-8052-0223A07866C0}.Debug|x86.ActiveCfg = Debug|Win32
+		{9DC63E56-FB74-43AD-8052-0223A07866C0}.Debug|x86.Build.0 = Debug|Win32
+		{9DC63E56-FB74-43AD-8052-0223A07866C0}.Release|x64.ActiveCfg = Release|x64
+		{9DC63E56-FB74-43AD-8052-0223A07866C0}.Release|x64.Build.0 = Release|x64
+		{9DC63E56-FB74-43AD-8052-0223A07866C0}.Release|x86.ActiveCfg = Release|Win32
+		{9DC63E56-FB74-43AD-8052-0223A07866C0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

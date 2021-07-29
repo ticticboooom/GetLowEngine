@@ -4,5 +4,5 @@
 class ShaderLoader
 {
 public:
-	static Structures::ShaderData GetShaderFromFile(const wchar_t*  fileName);
+	static ShaderData GetShaderFromFile(const wchar_t*  fileName);
 };

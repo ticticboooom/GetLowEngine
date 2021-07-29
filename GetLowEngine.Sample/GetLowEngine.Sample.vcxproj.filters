@@ -22,6 +22,9 @@
     <Filter Include="Source Files\ScenePart\GameScene">
       <UniqueIdentifier>{eec54ed9-936b-457c-ba1c-470b4f433f13}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SceneObject">
+      <UniqueIdentifier>{4bdb9148-1bcb-4b68-bd2b-daf445355873}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -35,6 +38,9 @@
     </ClCompile>
     <ClCompile Include="PlayerScenePart.cpp">
       <Filter>Source Files\ScenePart\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerObject.cpp">
+      <Filter>Source Files\SceneObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="PlayerScenePart.h">
       <Filter>Source Files\ScenePart\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerObject.h">
+      <Filter>Source Files\SceneObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

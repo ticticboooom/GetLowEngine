@@ -73,6 +73,15 @@
     <Filter Include="Source Files\Utility\Shader">
       <UniqueIdentifier>{5c3e5d1f-26e3-4dc4-acbb-1352aedecf05}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Base">
+      <UniqueIdentifier>{8dadf04a-c5f7-423e-a9c9-46598845f699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Base\Component">
+      <UniqueIdentifier>{d75ea4cd-3ac1-451b-ac09-e15b1d1d88ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Base\Component\Mesh">
+      <UniqueIdentifier>{cad74e7f-a54b-499d-b1de-eb1144ed5c15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -159,6 +168,12 @@
     <ClInclude Include="ShaderLoader.h">
       <Filter>Source Files\Utility\Shader</Filter>
     </ClInclude>
+    <ClInclude Include="BasicMeshComponent.h">
+      <Filter>Source Files\Base\Component\Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures.h">
+      <Filter>Source Files\Structure</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -232,6 +247,9 @@
     </ClCompile>
     <ClCompile Include="ShaderLoader.cpp">
       <Filter>Source Files\Utility\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicMeshComponent.cpp">
+      <Filter>Source Files\Base\Component\Mesh</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

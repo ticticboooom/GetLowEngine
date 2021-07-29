@@ -3,6 +3,7 @@
 
 class SceneObject : GameMain
 {
+public:
 	SceneObject();
 	~SceneObject();
 	void CreateRenderers() override;

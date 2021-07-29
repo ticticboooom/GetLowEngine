@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+#include "SceneObject.h"
 
 class ScenePart : public Component
 {
@@ -14,4 +15,8 @@ public:
 	void OnSuspending() override;
 	void OnResuming() override;
 	void OnDeviceRemoved() override;
+private:
+	std::shared_ptr<std::vector<SceneObject>> sceneObjects = std::make_shared<std::vector<SceneObject>>();
+protected:
+	void AddObject(SceneObject obj);
 };
