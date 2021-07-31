@@ -1,5 +1,5 @@
 ﻿#include "pch.h"
-#include "TextureResourceManager.h"
+#include "TextureResourceLoader.h"
 #include "TextureLoader.h"
 /**
  * @brief Construct a new Texture Resource Manager:: Texture Resource Manager object
@@ -8,7 +8,7 @@
  * @param deviceResources 
  * @param commandListManager 
  */
-TextureResourceManager::TextureResourceManager(std::wstring fileName,
+TextureResourceLoader::TextureResourceLoader(std::wstring fileName,
 	std::shared_ptr<DX::DeviceResources> deviceResources, std::shared_ptr<CommandListManager> commandListManager) :
 	m_deviceResources(deviceResources)
 {
@@ -32,7 +32,7 @@ TextureResourceManager::TextureResourceManager(std::wstring fileName,
  * @brief Destroy the Texture Resource Manager:: Texture Resource Manager object
  * 
  */
-TextureResourceManager::~TextureResourceManager()
+TextureResourceLoader::~TextureResourceLoader()
 {
 	m_textureDesc = {};
 	m_resourceManager.release();
@@ -46,7 +46,7 @@ TextureResourceManager::~TextureResourceManager()
  * @param srvHeapSize the heap size
  * @param descriptorSlot the slot of the texture resource
  */
-void TextureResourceManager::CreateSRVFromTextureResource(Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> srvHeap, const UINT srvHeapSize,
+void TextureResourceLoader::CreateSRVFromTextureResource(ID3D12DescriptorHeap* srvHeap, const UINT srvHeapSize,
 	const int descriptorSlot) const
 {
 	auto d3dDevice = m_deviceResources->GetD3DDevice();
@@ -62,9 +62,9 @@ void TextureResourceManager::CreateSRVFromTextureResource(Microsoft::WRL::ComPtr
  * @brief load a texture from file and put data into a struct
  * 
  * @param fileName poath and filename of the texture
- * @return TextureResourceManager::LoadedData the data that is loaded from the texture
+ * @return TextureResourceLoader::LoadedData the data that is loaded from the texture
  */
-TextureResourceManager::LoadedData TextureResourceManager::LoadTextureFromFile(std::wstring fileName)
+TextureResourceLoader::LoadedData TextureResourceLoader::LoadTextureFromFile(std::wstring fileName)
 {
 	BYTE* textureData;
 	TextureLoader* tl = new TextureLoader();

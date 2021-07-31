@@ -5,6 +5,5 @@ class PlayerScenePart : public ScenePart
 {
 public:
 	PlayerScenePart();
-	void Render() override;
 };
 

@@ -351,7 +351,7 @@ void DX::DeviceResources::UpdateRenderTargetSize()
 	// To improve battery life on high resolution devices, render to a smaller render target
 	// and allow the GPU to scale the output when it is presented.
 	// Calculate the necessary render target size in pixels.
-	m_outputSize.x = m_logicalSize.y;
+	m_outputSize.x = m_logicalSize.x;
 	m_outputSize.y = m_logicalSize.y;
 
 	// Prevent zero size DirectX content from being created.

@@ -2,6 +2,7 @@
 #include "pch.h"
 #include "ResourceManager.h"
 #include "DirectXHelper.h"
+#include "DescriptorHeapManager.h"
 /**
  * @brief constant buffers are for setting constant data inside of a shader (per frame) do that they can use the data without passing in seperate data every vertex
  * 

@@ -82,6 +82,12 @@
     <Filter Include="Source Files\Base\Component\Mesh">
       <UniqueIdentifier>{cad74e7f-a54b-499d-b1de-eb1144ed5c15}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utility\Loader">
+      <UniqueIdentifier>{0beb96fa-9ae0-468a-8d80-beab4c59fe55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utility\Resource">
+      <UniqueIdentifier>{a0154df8-4496-4618-a6cc-1034bca20115}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -123,7 +129,7 @@
     <ClInclude Include="TextureLoader.h">
       <Filter>Source Files\Utility\Pipeline\Resources</Filter>
     </ClInclude>
-    <ClInclude Include="TextureResourceManager.h">
+    <ClInclude Include="TextureResourceLoader.h">
       <Filter>Source Files\Utility\Pipeline\Resources</Filter>
     </ClInclude>
     <ClInclude Include="BufferManagerBase.h">
@@ -174,6 +180,18 @@
     <ClInclude Include="Structures.h">
       <Filter>Source Files\Structure</Filter>
     </ClInclude>
+    <ClInclude Include="BinaryMeshLoader.h">
+      <Filter>Source Files\Utility\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionableComponent.h">
+      <Filter>Source Files\Base\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelViewProjectionManager.h">
+      <Filter>Source Files\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -206,7 +224,7 @@
     <ClCompile Include="TextureLoader.cpp">
       <Filter>Source Files\Utility\Pipeline\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="TextureResourceManager.cpp">
+    <ClCompile Include="TextureResourceLoader.cpp">
       <Filter>Source Files\Utility\Pipeline\Resources</Filter>
     </ClCompile>
     <ClCompile Include="BufferManagerBase.cpp">
@@ -250,6 +268,18 @@
     </ClCompile>
     <ClCompile Include="BasicMeshComponent.cpp">
       <Filter>Source Files\Base\Component\Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryMeshLoader.cpp">
+      <Filter>Source Files\Utility\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files\Utility\Pipeline\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionableComponent.cpp">
+      <Filter>Source Files\Base\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelViewProjectionManager.cpp">
+      <Filter>Source Files\Utility</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

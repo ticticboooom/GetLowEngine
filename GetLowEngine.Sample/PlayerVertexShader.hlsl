@@ -7,13 +7,13 @@ static const matrix Identity =
 	{ 0, 0, 0, 1 }
 };
 
-//cbuffer ModelViewProjectionConstantBuffer : register(b0)
-//{
-//	matrix model;
-//	matrix view;
-//	matrix projection;
-//};
-//
+cbuffer ModelViewProjectionConstantBuffer : register(b0)
+{
+	matrix model;
+	matrix view;
+	matrix projection;
+};
+
 //cbuffer AnimationFrame : register(b1)
 //{
 //	float4x4 bones[maxBonesCount];
@@ -83,16 +83,16 @@ PixelShaderInput main(VertexShaderInput input)
 	//}
 
 	//pos = mul(pos, rotator);
-	/*pos = mul(pos, model);
+	pos = mul(pos, model);
 	pos = mul(pos, view);
-	pos = mul(pos, projection);*/
+	pos = mul(pos, projection);
 	output.pos = pos;
 	output.texCoord = input.texCoord;
 	//if (input.isAnimated == 1) {
 	//	output.normal = normalize(mul(input.normal, transform));
 	//}
 	//output.normal = normalize(mul(input.normal, rotator));
-	//output.normal = normalize(mul(input.normal, model));
+	output.normal = normalize(mul(input.normal, model));
 	output.normal = normalize(input.normal);
 	return output;
 }

@@ -7,14 +7,13 @@
  * @brief Creates the resource for putting the texture onto the graphics card
  * 
  */
-class TextureResourceManager
+class TextureResourceLoader
 {
 public:
-	 TextureResourceManager(std::wstring fileName, std::shared_ptr<DX::DeviceResources> deviceResources,
+	 TextureResourceLoader(std::wstring fileName, std::shared_ptr<DX::DeviceResources> deviceResources,
 		std::shared_ptr<CommandListManager> commandListManager);
-	 ~TextureResourceManager();
-	 void CreateSRVFromTextureResource(Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> srvHeap, const UINT srvHeapSize,
-	                                  const int descriptorSlot) const;
+	 ~TextureResourceLoader();
+	void CreateSRVFromTextureResource(ID3D12DescriptorHeap* srvHeap, const UINT srvHeapSize, const int descriptorSlot) const;
 private:
 	struct LoadedData
 	{
@@ -25,4 +24,5 @@ private:
 	std::shared_ptr<DX::DeviceResources> m_deviceResources;
 	D3D12_RESOURCE_DESC m_textureDesc; /// descriptor of texture
 	std::unique_ptr<ResourceManager> m_resourceManager; /// resource manager for texture
+	int currentIndex;
 };

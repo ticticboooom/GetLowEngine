@@ -34,14 +34,15 @@ void SceneManager::SetScene(std::string name)
 void SceneManager::CreateRenderers()
 {
 	currentScene->CreateRenderers();
-	auto sig = CreateRootSignatures(DX::DeviceResources::GetInstance());
-	RootSignatureHelper::GetInstance()->AddSignatureManager(sig);
-	(*sig)[0]->Finalize(L"Root Signature",
+	RootSignatureHelper::GetInstance()->Init();
+	(*RootSignatureHelper::GetInstance()->GetRootSignatureManager())[0]->Finalize(L"Root Signature",
 		D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT |
 		D3D12_ROOT_SIGNATURE_FLAG_DENY_DOMAIN_SHADER_ROOT_ACCESS |
 		D3D12_ROOT_SIGNATURE_FLAG_DENY_GEOMETRY_SHADER_ROOT_ACCESS |
 		D3D12_ROOT_SIGNATURE_FLAG_DENY_HULL_SHADER_ROOT_ACCESS);
- }
+
+	DescriptorHeapManager::Create(RootSignatureHelper::GetInstance()->GetParameterCount(), D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV, D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE);
+}
 
 void SceneManager::Init()
 {
@@ -49,13 +50,13 @@ void SceneManager::Init()
 	static const D3D12_INPUT_ELEMENT_DESC inputLayout[] =
 	{
 		{ "POSITION",	0,	DXGI_FORMAT_R32G32B32_FLOAT,	0, 0,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
-	{ "TEXCOORD",	0,	DXGI_FORMAT_R32G32_FLOAT,		0, 12,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
-	{ "NORMAL",		0,	DXGI_FORMAT_R32G32B32_FLOAT,	0, 20,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
-	{ "TEXCOORD",	1,	DXGI_FORMAT_R32G32B32A32_FLOAT,	0, 32,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
-	{ "TEXCOORD",	2,	DXGI_FORMAT_R32G32B32A32_FLOAT,	0, 48,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
-	{ "TEXCOORD",	3,	DXGI_FORMAT_R32G32B32A32_FLOAT,	0, 64,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
-	{ "TEXCOORD",	4,	DXGI_FORMAT_R32G32B32A32_FLOAT,	0, 80,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
-	{ "TEXCOORD",	5,	DXGI_FORMAT_R32_SINT,			0, 96,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 }
+		{ "TEXCOORD",	0,	DXGI_FORMAT_R32G32_FLOAT,		0, 12,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
+		{ "NORMAL",		0,	DXGI_FORMAT_R32G32B32_FLOAT,	0, 20,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
+		{ "TEXCOORD",	1,	DXGI_FORMAT_R32G32B32A32_FLOAT,	0, 32,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
+		{ "TEXCOORD",	2,	DXGI_FORMAT_R32G32B32A32_FLOAT,	0, 48,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
+		{ "TEXCOORD",	3,	DXGI_FORMAT_R32G32B32A32_FLOAT,	0, 64,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
+		{ "TEXCOORD",	4,	DXGI_FORMAT_R32G32B32A32_FLOAT,	0, 80,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 },
+		{ "TEXCOORD",	5,	DXGI_FORMAT_R32_SINT,			0, 96,	D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0 }
 	};
 	psoManager = std::make_shared<PSOManager>(DX::DeviceResources::GetInstance());
 	psoManager->SetInputLayout({ inputLayout, _countof(inputLayout) });
@@ -71,6 +72,7 @@ void SceneManager::Init()
 	CommandListManager::Create(DX::DeviceResources::GetInstance(), psoManager->GetState(), D3D12_COMMAND_LIST_TYPE_DIRECT);
 
 	currentScene->Init();
+
 	CommandListManager::GetInstance()->CloseAndExcecute();
 	DX::DeviceResources::GetInstance()->WaitForGpu();
 }
@@ -94,8 +96,8 @@ void SceneManager::Render()
 	ThrowIfFailed(CommandListManager::GetInstance()->Reset(DX::DeviceResources::GetInstance()->GetCommandAllocator(), psoManager->GetState()));
 
 	CommandListManager::GetInstance()->SetGraphicsRootSignature((*RootSignatureHelper::GetInstance()->GetRootSignatureManager())[0]->GetSignature());
-	//ID3D12DescriptorHeap* ppHeaps[] = { DescriptorHeapManager::GetInstance()->Get() };
-	//CommandListManager::GetInstance()->SetDescriptorHeaps(_countof(ppHeaps), ppHeaps);
+	ID3D12DescriptorHeap* ppHeaps[] = { DescriptorHeapManager::GetInstance()->Get() };
+	CommandListManager::GetInstance()->SetDescriptorHeaps(_countof(ppHeaps), ppHeaps);
 
 	D3D12_VIEWPORT viewport = DX::DeviceResources::GetInstance()->GetScreenViewport();
 
@@ -116,6 +118,8 @@ void SceneManager::Render()
 
 void SceneManager::OnWindowSizeChanged()
 {
+	const auto viewport = DX::DeviceResources::GetInstance()->GetScreenViewport();
+	m_scissorRect = { 0, 0, static_cast<LONG>(viewport.Width), static_cast<LONG>(viewport.Height) };
 	currentScene->OnWindowSizeChanged();
 }
 

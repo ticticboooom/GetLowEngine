@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="App.h" />
     <ClInclude Include="BasicMeshComponent.h" />
+    <ClInclude Include="BinaryMeshLoader.h" />
     <ClInclude Include="BufferManagerBase.h" />
     <ClInclude Include="CommandListManager.h" />
     <ClInclude Include="Component.h" />
@@ -169,9 +170,11 @@
     <ClInclude Include="GameMain.h" />
     <ClInclude Include="IndexBufferManager.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="ModelViewProjectionManager.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="PathManager.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PositionableComponent.h" />
     <ClInclude Include="PSOManager.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SceneObject.h" />
@@ -183,12 +186,14 @@
     <ClInclude Include="ShaderLoader.h" />
     <ClInclude Include="Structures.h" />
     <ClInclude Include="TextureLoader.h" />
-    <ClInclude Include="TextureResourceManager.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TextureResourceLoader.h" />
     <ClInclude Include="VertexBufferManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp" />
     <ClCompile Include="BasicMeshComponent.cpp" />
+    <ClCompile Include="BinaryMeshLoader.cpp" />
     <ClCompile Include="BufferManagerBase.cpp" />
     <ClCompile Include="CommandListManager.cpp" />
     <ClCompile Include="Component.cpp" />
@@ -197,6 +202,7 @@
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="IndexBufferManager.cpp" />
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="ModelViewProjectionManager.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="PathManager.cpp" />
     <ClCompile Include="pch.cpp">
@@ -205,6 +211,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PositionableComponent.cpp" />
     <ClCompile Include="PSOManager.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneObject.cpp" />
@@ -215,7 +222,8 @@
     <ClCompile Include="RootSignatureManager.cpp" />
     <ClCompile Include="ShaderLoader.cpp" />
     <ClCompile Include="TextureLoader.cpp" />
-    <ClCompile Include="TextureResourceManager.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TextureResourceLoader.cpp" />
     <ClCompile Include="VertexBufferManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

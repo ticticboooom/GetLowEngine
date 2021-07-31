@@ -1,8 +1,9 @@
 #pragma once
+#include "pch.h"
 #include <memory>
 #include <vector>
 #include <DirectXMath.h>
-
+#include <string>
 
 struct AnimFrameBone
 {
@@ -75,27 +76,22 @@ struct AnimationForExport {
 };
 
 struct MeshData {
-	std::shared_ptr<std::vector<PrimitiveVertex>> vertices;
-	std::shared_ptr<std::vector<uint32_t>> indices;
+	std::shared_ptr<std::vector<VertexTexCoordNormal>> vertices;
+	std::shared_ptr<std::vector<unsigned long>> indices;
 	std::shared_ptr<AnimationForExport> animations;
+};
+
+struct VerticesIndicesFromBin
+{
+	std::shared_ptr<std::vector<VertexTexCoordNormal>> vertices;
+	std::shared_ptr<std::vector<unsigned long>> indices;
+	std::shared_ptr<std::vector<std::vector<std::vector<XMMATRIX>>>> animations;
 };
 
 struct ShaderData
 {
 	byte* shader;
 	uint32_t size;
-};
-
-struct VertexTexCoordNormal
-{
-	DirectX::XMFLOAT3 pos;
-	DirectX::XMFLOAT2 texCoord;
-	DirectX::XMFLOAT3 normal;
-	DirectX::XMFLOAT4 weights1;
-	DirectX::XMFLOAT4 weights2;
-	DirectX::XMFLOAT4 bones1;
-	DirectX::XMFLOAT4 bones2;
-	int isAnimated;
 };
 
 struct ModelViewProjectionConstantBuffer
@@ -109,5 +105,16 @@ struct HeightMapInfo {        // Heightmap structure
 	int terrainWidth;        // Width of heightmap
 	int terrainHeight;        // Height (Length) of heightmap
 	DirectX::XMFLOAT3* heightMap;    // Array to store terrain's vertex positions
+};
+
+struct Transform {
+	XMVECTOR position;
+	XMVECTOR rotationQuat;
+	XMVECTOR scale;
+	Transform() {
+		position = XMVectorSet(0, 0, 0, 1);
+		rotationQuat = XMQuaternionIdentity();
+		scale = XMVectorSet(1, 1, 1, 1);
+	}
 };
 

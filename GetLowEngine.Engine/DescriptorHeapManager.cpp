@@ -4,6 +4,10 @@
 #include "DirectXHelper.h"
 #include "CommandListManager.h"
 std::shared_ptr<DescriptorHeapManager> DescriptorHeapManager::instance = nullptr;
+void DescriptorHeapManager::Create(const int numDescriptors, D3D12_DESCRIPTOR_HEAP_TYPE type, D3D12_DESCRIPTOR_HEAP_FLAGS flags)
+{
+	instance = std::make_shared<DescriptorHeapManager>(numDescriptors, type, flags);
+}
 /**
  * @brief Construct a new Descriptor Heap Manager:: Descriptor Heap Manager object
  *  the descriptor heap stores the descriptors of the resources used in heap which is used to get the resourc on rendering along with the root signature to give the GPU resources to render
@@ -45,4 +49,11 @@ void DescriptorHeapManager::Render(UINT count, UINT* rootSigIndex, UINT* heapInd
 		const CD3DX12_GPU_DESCRIPTOR_HANDLE gpuHandle(this->GetGPUDescriptorHandleForHeapStart(), heapIndex[i], size);
 		commandListManager->SetGraphicsRootDescriptorTable(rootSigIndex[i], gpuHandle);
 	}
+}
+
+int DescriptorHeapManager::GetAndIncrement()
+{
+	int result = index;
+	index++;
+	return result;
 }

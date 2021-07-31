@@ -18,6 +18,18 @@ MeshData MeshLoader::LoadFromFile(std::string path)
 	if (scene->HasAnimations()) {
 		LoadAnimations(scene);
 	}
+	for (auto i = 0; i < scene->mNumMeshes; i++) {
+		m_vertices = loadVertices(scene, i);
+		m_indices = loadIndices(scene, i);
+		if (scene->HasAnimations()) {
+			LoadBones(scene, i);
+		}
+	}
+	ReadBoneHierarchy(scene);
+	FinaliseAnimations();
+	CreateFinalVertices();
+
+	return { m_finalVertices, m_indices, m_finalAnimations };
 }
 
 void MeshLoader::LoadAnimations(const aiScene* scene)

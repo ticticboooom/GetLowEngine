@@ -124,6 +124,9 @@
       <AdditionalLibraryDirectories>D:\Dev\GetLowEngine\external_libs\libs\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>copy $(SolutionDir)external_libs\libs\Debug\assimp-vc142-mtd.dll $(OutDirFullPath)assimp-vc142-mtd.dll</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -142,10 +145,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BinaryModelSaver.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MeshLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinaryModelSaver.h" />
     <ClInclude Include="MeshLoader.h" />
     <ClInclude Include="Structures.h" />
   </ItemGroup>

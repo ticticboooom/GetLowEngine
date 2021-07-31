@@ -5,6 +5,5 @@ class GameScene : public Scene
 {
 public:
 	GameScene();
-	void Init() override;
 };
 

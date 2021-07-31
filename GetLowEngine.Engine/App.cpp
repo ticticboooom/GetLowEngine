@@ -73,7 +73,7 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 		RECT rect;
 		RECT cRect;
 		GetWindowRect(m_hwnd, &rect);
-		ClipCursor(&rect);
+		//ClipCursor(&rect);
 		GetClientRect(m_hwnd, &cRect);
 		DirectX::XMFLOAT2 deaultCursorPos = { static_cast<float>(cRect.right / 2) , static_cast<float>(cRect.bottom / 2) };
 		POINT pt;
@@ -111,7 +111,7 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 				auto vec = Vector2I(x, y);
 				Mouse::GetInstance()->SetMouseDeltaPosition(vec);
 				Mouse::GetInstance()->SetMousePosition(vec);
-				SetCursorPos(pt.x, pt.y);
+				//SetCursorPos(pt.x, pt.y);
 			}
 			else {
 				TranslateMessage(&msg);
@@ -125,7 +125,7 @@ int App::Run(HINSTANCE hInstance, int nCmdShow)
 			GetDeviceResources()->Present();
 		}
 	}
-	ClipCursor(nullptr);
+	//ClipCursor(nullptr);
 	SceneManager::GetInstance()->OnDeviceRemoved();
 
 	// Return this part of the WM_QUIT message to Windows.
@@ -151,6 +151,7 @@ LRESULT CALLBACK App::WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 				DirectX::XMFLOAT2(
 					float(rect.right),
 					float(rect.bottom)));
+			SceneManager::GetInstance()->OnWindowSizeChanged();
 		}
 	}
 	return 0;
